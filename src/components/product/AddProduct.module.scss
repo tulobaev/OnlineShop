@@ -1,0 +1,149 @@
+#admin {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_container {
+  width: 480px;
+  border-radius: 12px;
+  background-color: #1f2937;
+  padding: 2rem;
+  color: #f3f4f6;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+.input_group {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.input_group label {
+  padding-block: 10px;
+  display: block;
+  color: #9ca3af;
+  font-size: 17px;
+}
+
+.input_group input {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #374151;
+  outline: none;
+  background-color: #1f2937;
+  padding: 15px;
+  color: #f3f4f6;
+  transition: border 0.3s ease-in-out;
+}
+
+.input_group input:focus {
+  border-color: #a78bfa;
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 8px 0 14px;
+}
+
+.forgot a,
+.signup a {
+  color: #f3f4f6;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+
+.forgot a:hover,
+.signup a:hover {
+  text-decoration: underline;
+  color: #a78bfa;
+}
+
+.sign {
+  margin-top: 6%;
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #a78bfa, #7c3aed);
+  padding: 12px;
+  text-align: center;
+  color: #1f2937;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+.sign:hover {
+  background: linear-gradient(90deg, #7c3aed, #5b21b6);
+}
+
+.social_message {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.line {
+  height: 1px;
+  flex: 1;
+  background-color: #374151;
+}
+
+.social-message .message {
+  padding: 0 12px;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons .icon {
+  border-radius: 4px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.social-icons .icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icons .icon svg {
+  height: 20px;
+  width: 20px;
+  fill: #fff;
+}
+
+.signup {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
