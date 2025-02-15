@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AddProduct from "../components/product/AddProduct";
 import Home from "../pages/Home";
+import EditProduct from "../components/product/EditProduct";
 
 const MainRoutes = () => {
   const routes = [
@@ -24,6 +25,11 @@ const MainRoutes = () => {
       link: "/Cart",
       element: "",
       id: 4,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProduct />,
+      id: 5,
     },
   ];
   return (

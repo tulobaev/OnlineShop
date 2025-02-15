@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import scss from "./AddProduct.module.scss";
 import { useProduct } from "../../context/ProductContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const initialValues = {
   name: "",
@@ -10,10 +10,22 @@ const initialValues = {
   image: "",
 };
 
-const AddProduct = () => {
-  const navigate = useNavigate();
-  const { addProduct } = useProduct();
+const EditProduct = () => {
+  const { getOneProduct, oneProduct, editProduct } = useProduct();
   const [inputValues, setInputValues] = useState(initialValues);
+  const { id } = useParams();
+
+  const navigate = useNavigate(); // для перехода на главную страницу
+
+  useEffect(() => {
+    getOneProduct(id); // это id от useParams поисковик id
+  }, []);
+
+  useEffect(() => {
+    if (oneProduct) {
+      setInputValues(oneProduct);
+    }
+  }, [oneProduct]);
 
   const checkInputValue = (e) => {
     if (e.target.name === "price") {
@@ -35,7 +47,7 @@ const AddProduct = () => {
       alert("Заполните все поля!!!");
       return;
     }
-    addProduct(inputValues);
+    editProduct(id, inputValues);
     setInputValues(initialValues);
     navigate("/");
   };
@@ -45,7 +57,7 @@ const AddProduct = () => {
       <div className="container">
         <div className={scss.admin}>
           <div className={scss.form_container}>
-            <p className={scss.title}>Добавление продукта</p>
+            <p className={scss.title}>Изменение продукта</p>
             <form className={scss.form}>
               <div className={scss.input_group}>
                 <label>Имя товара</label>
@@ -80,7 +92,7 @@ const AddProduct = () => {
                 />
               </div>
               <button type="button" onClick={sendData} className={scss.sign}>
-                Добавить
+                Изменить
               </button>
             </form>
           </div>
@@ -90,4 +102,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

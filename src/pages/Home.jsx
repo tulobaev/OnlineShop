@@ -5,9 +5,11 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { FaEdit } from "react-icons/fa";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { CircularProgress, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { readProduct, product, deleteProduct } = useProduct();
+  const navigate = useNavigate();
 
   useEffect(() => {
     readProduct();
@@ -35,7 +37,10 @@ const Home = () => {
                       className={scss.delete_btn}
                       onClick={() => deleteProduct(item._id)}
                     />
-                    <FaEdit className={scss.edit_btn} />
+                    <FaEdit
+                      onClick={() => navigate(`/edit/${item._id}`)}
+                      className={scss.edit_btn}
+                    />
                     <LocalMallIcon className={scss.cart_btn} />
                   </div>
                 </div>
